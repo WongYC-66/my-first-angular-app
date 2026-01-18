@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "github-build": "ng build --configuration production --base-href https://wongyc-66.github.io/my-first-angular-app/",
-    "github-deploy": "npx angular-cli-ghpages --dir=dist/angular-material/browser --no-silent"
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/angular-material/browser --no-silent",
+    "gh-update": "npm run github-build && npm run github-deploy"
   },
   "prettier": {
     "printWidth": 100,
