@@ -1,0 +1,90 @@
+@use '@angular/material' as mat;
+
+.container {
+  padding: 60px;
+  border: 1px solid black;
+}
+
+mat-form-field {
+  // height: 65px;
+}
+
+mat-form-field.mat-mdc-form-field {
+  .mat-mdc-text-field-wrapper {
+    .mat-mdc-form-field-focus-overlay {}
+
+    .mat-mdc-form-field-flex {
+
+      .mat-mdc-form-field-infix {
+
+        // Floating label
+        label.mat-mdc-floating-label {
+          mat-label {}
+
+          .mat-mdc-form-field-required-marker {}
+        }
+
+        // Select control
+        mat-select.mat-mdc-select {
+
+          .mat-mdc-select-trigger {
+            .mat-mdc-select-value {
+              .mat-mdc-select-value-text {
+                .mat-mdc-select-min-line {}
+              }
+            }
+
+            .mat-mdc-select-arrow-wrapper {
+
+              .mat-mdc-select-arrow {
+                // height: 65px;
+
+                svg {
+                  path {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mdc-line-ripple {}
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    .mat-mdc-form-field-hint-wrapper {
+      mat-hint.mat-mdc-form-field-hint {}
+    }
+  }
+}
+
+
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+.container {
+  @include mat.select-overrides((container-elevation-shadow: 3px 2px 6px rgba(0, 0, 0, 0.9),
+      panel-background-color: lightblue,
+      enabled-trigger-text-color: blue,
+      disabled-trigger-text-color: pink,
+      placeholder-text-color: black,
+
+      enabled-arrow-color:orange,
+      disabled-arrow-color: pink,
+      focused-arrow-color: red,
+      invalid-arrow-color: pink,
+
+      trigger-text-font: "Times New Roman",
+      trigger-text-line-height: 5px,
+      trigger-text-size: 5px,
+      trigger-text-tracking: 5px,
+      trigger-text-weight: 900,
+
+      arrow-transform: scale(0.3),
+    ));
+
+  // @include mat.form-field-overrides((container-height: 50px,
+    // ));
+
+  @include mat.all-component-densities(-5);
+}
